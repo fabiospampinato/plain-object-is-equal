@@ -14,7 +14,7 @@ benchmark.defaultOptions = Object.assign ( benchmark.defaultOptions, {
 });
 
 benchmark ({
-  name: 'isequal:samples',
+  name: 'samples',
   fn: () => {
     isEqual ( true, true );
     isEqual ( 'foo', 'bar' );
@@ -25,17 +25,19 @@ benchmark ({
 });
 
 benchmark ({
-  name: 'isequal:big',
+  name: 'big',
   fn: () => {
     isEqual ( TestLast.x, TestLast.y );
   }
 });
 
 benchmark ({
-  name: 'isequal:suite',
+  name: 'suite',
   fn: () => {
     Tests.forEach ( ({ x, y }) => {
       isEqual ( x, y );
     });
   }
 });
+
+benchmark.summary ();
