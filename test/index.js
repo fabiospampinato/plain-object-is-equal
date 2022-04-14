@@ -1,11 +1,11 @@
 
 /* IMPORT */
 
-import {describe} from 'ava-spec';
-import {default as isEqual} from '../dist';
-import Tests from './tests';
+import {describe} from 'fava';
+import isEqual from '../dist/index.js';
+import Tests from './tests.js';
 
-/* IS EQUAL */
+/* MAIN */
 
 describe ( 'isEqual', it => {
 
@@ -13,7 +13,7 @@ describe ( 'isEqual', it => {
 
     it ( title, t => {
 
-      t.is ( isEqual ( x, y ), result )
+      t.is ( isEqual ( x, y ), result );
 
     });
 

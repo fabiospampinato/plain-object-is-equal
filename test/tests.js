@@ -1,5 +1,5 @@
 
-/* TESTS */
+/* MAIN */
 
 //URL: https://github.com/epoberezkin/fast-deep-equal/blob/master/spec/tests.js
 
@@ -284,4 +284,4 @@ const Tests = [
 
 /* EXPORT */
 
-module.exports = Tests;
+export default Tests;

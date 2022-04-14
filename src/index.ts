@@ -1,11 +1,13 @@
 
-/* IS EQUAL */
+/* HELPERS */
 
 const getKeys = Object.keys;
 const hasOwnProperty = Object.prototype.hasOwnProperty;
 const isArray = Array.isArray;
 
-function isEqual ( x, y ): boolean {
+/* MAIN */
+
+const isEqual = ( x: object, y: object ): boolean => {
 
   if ( x === y ) return true;
 
@@ -15,8 +17,8 @@ function isEqual ( x, y ): boolean {
 
       if ( isArray ( y ) ) {
 
-        let xLength = x.length,
-            yLength = y.length;
+        let xLength = x.length;
+        let yLength = y.length;
 
         if ( xLength !== yLength ) return false;
 
@@ -38,18 +40,18 @@ function isEqual ( x, y ): boolean {
 
     } else {
 
-      let xKeys = getKeys ( x ),
-          xLength = xKeys.length,
-          yKeys = getKeys ( y ),
-          yLength = yKeys.length;
+      let xKeys = getKeys ( x );
+      let xLength = xKeys.length;
+      let yKeys = getKeys ( y );
+      let yLength = yKeys.length;
 
       if ( xLength !== yLength ) return false;
 
       while ( xLength-- ) {
 
-        const key = xKeys[xLength],
-              xValue = x[key],
-              yValue = y[key];
+        const key = xKeys[xLength];
+        const xValue = x[key];
+        const yValue = y[key];
 
         if ( !isEqual ( xValue, yValue ) ) return false;
 
@@ -65,7 +67,7 @@ function isEqual ( x, y ): boolean {
 
   return x !== x && y !== y;
 
-}
+};
 
 /* EXPORT */
 

@@ -1,12 +1,13 @@
 
 /* IMPORT */
 
-const {default: isEqual} = require ( '../dist' ),
-      Tests = require ( '../test/tests' ),
-      TestLast = Tests[Tests.length -1],
-      benchmark = require ( 'benchloop' );
+import benchmark from 'benchloop';
+import isEqual from '../dist/index.js';
+import Tests from '../test/tests.js';
 
-/* BENCHMARK */
+const Test = Tests[Tests.length -1];
+
+/* MAIN */
 
 benchmark.defaultOptions = Object.assign ( benchmark.defaultOptions, {
   iterations: 100000,
@@ -27,7 +28,7 @@ benchmark ({
 benchmark ({
   name: 'big',
   fn: () => {
-    isEqual ( TestLast.x, TestLast.y );
+    isEqual ( Test.x, Test.y );
   }
 });
 
