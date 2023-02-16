@@ -3,13 +3,13 @@
 
 import {describe} from 'fava';
 import isEqual from '../dist/index.js';
-import Tests from './tests.js';
+import Fixtures from './fixtures.js';
 
 /* MAIN */
 
 describe ( 'isEqual', it => {
 
-  Tests.forEach ( ({ title, x, y, result }) => {
+  Fixtures.forEach ( ({ title, x, y, result }) => {
 
     it ( title, t => {
 

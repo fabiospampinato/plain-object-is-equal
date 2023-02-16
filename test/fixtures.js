@@ -3,7 +3,7 @@
 
 //URL: https://github.com/epoberezkin/fast-deep-equal/blob/master/spec/tests.js
 
-const Tests = [
+const Fixtures = [
   {
     title: 'equal numbers',
     x: 1,
@@ -284,4 +284,4 @@ const Tests = [
 
 /* EXPORT */
 
-export default Tests;
+export default Fixtures;

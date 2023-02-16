@@ -3,15 +3,16 @@
 
 import benchmark from 'benchloop';
 import isEqual from '../dist/index.js';
-import Tests from '../test/tests.js';
+import Fixtures from '../test/fixtures.js';
 
-const Test = Tests[Tests.length -1];
+/* HELPERS */
+
+const Test = Fixtures[Fixtures.length -1];
 
 /* MAIN */
 
 benchmark.defaultOptions = Object.assign ( benchmark.defaultOptions, {
-  iterations: 100000,
-  log: 'compact'
+  iterations: 100_000
 });
 
 benchmark ({
@@ -35,7 +36,7 @@ benchmark ({
 benchmark ({
   name: 'suite',
   fn: () => {
-    Tests.forEach ( ({ x, y }) => {
+    Fixtures.forEach ( ({ x, y }) => {
       isEqual ( x, y );
     });
   }
