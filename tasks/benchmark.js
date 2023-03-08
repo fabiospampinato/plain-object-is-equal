@@ -11,7 +11,7 @@ const Test = Fixtures[Fixtures.length -1];
 
 /* MAIN */
 
-benchmark.defaultOptions = Object.assign ( benchmark.defaultOptions, {
+benchmark.config ({
   iterations: 100_000
 });
 
